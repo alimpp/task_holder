@@ -22,10 +22,10 @@
 
     <div class="d-flex flex-column justify-content-center align-items-center mt-5 pt-5 items">
       <div class="d-flex pt-3" v-for="item in items" :key="item.id">
-        <i :class="`bi ${item.icon}`"></i>
-        <router-link class="application_link px-2 font_size_s font_w_800 pt-1" v-if="isOpen" :to="item.route">{{
-          item.name
-        }}</router-link>
+        <router-link class="application_link px-2 pt-1" :to="item.route">
+          <i :class="`bi ${item.icon}`"></i>
+          <span v-if="isOpen" class="px-2">{{item.name}}</span>
+        </router-link>
       </div>
     </div>
 

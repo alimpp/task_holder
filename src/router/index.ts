@@ -2,9 +2,9 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path:"/",
+    path:"/tasks",
     name: "base",
-    redirect:"/home",
+    redirect:"/tasks",
     component: () => import("@/layout/base/index.vue"),
     children: [
       {
@@ -24,11 +24,24 @@ const routes: Array<RouteRecordRaw> = [
       },
     ]
   },
+
+  {
+    path:"/",
+    name: "started page",
+    component: () => import("@/pages/started.vue"),
+  } ,
+  {
+    path:"/login",
+    name: "login page",
+    component: () => import("@/pages/login.vue"),
+  } ,
+
   {
     path: "/:pathMatch(.*)*",
     name : "error",
     component: () => import("@/layout/error/index.vue"),
   }
+
 ]
 
 const router = createRouter({
