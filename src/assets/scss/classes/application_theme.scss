@@ -10,3 +10,25 @@
     color: var(--dark-);
     transition: 0.3s;
 }
+
+.sidebar_dark_mode_theme{
+    background-color: var(--sidebar-in-dark-mode);
+    color: var(--light-);
+    transition: 0.3s;
+}
+.sidebar_light_mode_theme{
+    background-color: var(--primary-);
+    color: var(--light-);
+    transition: 0.3s;
+}
+
+.topbar_dark_mode_theme{
+    background-color: var(--topbar-in-dark-mode);
+    color: var(--light-);
+    transition: 0.3s;
+}
+.topbar_light_mode_theme{
+    background-color: var(--primary-);
+    color: var(--light-);
+    transition: 0.3s;
+}
