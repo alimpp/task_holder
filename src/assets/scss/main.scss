@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: shabnam
+}
+
+@import './classes/fonts.scss';
+@import './variables/fontFaces';
+@import './classes/colors.scss';
+@import './classes/backgounds.scss';
+@import './classes/application_theme.scss';
+@import './classes/fontsSize.scss';
+@import '../scss/classes/fontsWeight.scss';
+
+.rtl_design{direction: rtl;}
+.application_pointer{cursor: pointer;}
+.application_animation{animation: 1s application_animation;}
+
+@keyframes application_animation {0%{opacity: 0;}100%{opacity: 1;}}
+::-webkit-scrollbar {
+    width: 0px;
+    border: 0px solid #2c2c2c;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background: #eeeeee;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: #cac8c8;
+  }

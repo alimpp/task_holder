@@ -1,0 +1,17 @@
+@import "../variables/fontSize.scss";
+
+.font_size_s{
+  font-size: $--size-small;
+}
+
+.font_size_m{
+  font-size: $--size-medium;
+}
+
+.font_size_l{
+  font-size: $--size-large;
+}
+
+.font_size_xl{
+  font-size: $--size-x-large;
+}
