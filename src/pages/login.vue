@@ -1,6 +1,7 @@
 <template>
-  <div class="started-container">
-    <div class="text-container px-5">
+  <div class="login-container">
+    <started v-if="startedComponent" />
+    <div class="text-container px-5 application_animation" v-else>
       <span class="font_size_m font_w_800 primary_color typeing">
         Login To TASKHOLDER
       </span>
@@ -12,30 +13,37 @@
         <i class="bi bi-twitter px-1"></i>
         <i class="bi bi-linkedin"></i>
       </div>
+
       <span class="font_size_s font_w_800 pt-1"> TASKHOLDER...</span>
-    </div>
-    <div class="image-container">
-      <img
-        src="https://fellow.app/wp-content/uploads/2022/01/task-tools.jpg"
-        alt="vector"
-      />
     </div>
   </div>
 </template>
 
 <script setup>
+import started from "@/components/started";
+import { onBeforeMount , ref } from "vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
+const startedComponent = ref(false)
+
+setTimeout(() => {
+  startedComponent.value = false
+}, 4000);
+
+onBeforeMount(() => {
+  startedComponent.value = true
+})
 </script>
 
 <style scoped lang="scss">
-.started-container {
+.login-container {
   width: 100%;
   height: 100vh;
   display: flex;
   overflow: hidden;
-  animation: 5s started;
   .text-container {
-    width: 50%;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -48,27 +56,6 @@
       animation: 6s typing;
       font-size: 1.6rem;
     }
-  }
-  .image-container {
-    width: 50%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 100%;
-      height: 100vh;
-      border-radius: 200px 0 0 200px;
-    }
-  }
-}
-
-@keyframes started {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 100vh;
   }
 }
 

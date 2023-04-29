@@ -27,14 +27,17 @@ const routes: Array<RouteRecordRaw> = [
 
   {
     path:"/",
-    name: "started page",
-    component: () => import("@/pages/started.vue"),
-  } ,
-  {
-    path:"/login",
-    name: "login page",
-    component: () => import("@/pages/login.vue"),
-  } ,
+    name: "login",
+    redirect:"/login",
+    component: () => import("@/layout/login/login.vue"),
+    children: [
+      {
+        path:"/login",
+        name: "login page",
+        component: () => import("@/pages/login.vue"),
+      },
+    ]
+  },
 
   {
     path: "/:pathMatch(.*)*",

@@ -1,11 +1,9 @@
 <template>
   <div class="started-container">
     <div class="text-container px-5">
-
-        <span class="font_size_m font_w_800 primary_color typeing">
-          Welcome To TASKHOLDER
-        </span>
-
+      <span class="font_size_m font_w_800 primary_color typeing">
+        Welcome To TASKHOLDER
+      </span>
       <span class="font_size_s font_w_800 pt-1 primary_color wink">
         Taskholder is ready for you...
       </span>
@@ -23,22 +21,8 @@
       </div>
       <span class="font_size_s font_w_800 pt-1"> TASKHOLDER...</span>
     </div>
-    <div class="image-container">
-      <img src="https://fellow.app/wp-content/uploads/2022/01/task-tools.jpg" alt="vector" />
-    </div>
   </div>
 </template>
-
-<script setup>
-import {onMonuted} from 'vue'
-import {useRouter} from 'vue-router'
-
-const router = useRouter()
-
-setTimeout(() => {
-   router.push('/login')
-} , 9000)
-</script>
 
 <style scoped lang="scss">
 .started-container {
@@ -46,9 +30,8 @@ setTimeout(() => {
   height: 100vh;
   display: flex;
   overflow: hidden;
-  animation: 10s started;
   .text-container {
-    width: 50%;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -58,11 +41,11 @@ setTimeout(() => {
         overflow: hidden;
         border-right: .15em solid orange;
         white-space: nowrap;
-        animation: 6s typing;
+        animation: 4s typing;
         font-size: 1.6rem;
     }
     .wink{
-        animation: 0.5s wink infinite;
+        animation: 1s wink infinite;
     }
   }
   .image-container {
@@ -76,18 +59,6 @@ setTimeout(() => {
       height: 100vh;
       border-radius: 200px 0 0 200px;
     }
-  }
-}
-
-@keyframes started {
-  0% {
-    height: 0;
-  }
-  50%{
-    height: 100vh;
-  }
-  100% {
-    height: 0;
   }
 }
 
