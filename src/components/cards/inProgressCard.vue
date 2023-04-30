@@ -1,9 +1,7 @@
 <template>
   <baseCard>
     <template #cardContent>
-      <p>
-        In Progress
-      </p>
+     
     </template>
   </baseCard>
 </template>

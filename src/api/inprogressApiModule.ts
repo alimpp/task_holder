@@ -1,28 +1,27 @@
 import axios from 'axios'
 import { application_base_url , application_path } from '@/services/applicationPath'
 import { ErrorNotification , SuccessNotification } from '@/services/applicationNotification'
-import { tasksDataStoreModule } from '@/stores/tasksDataStoreModule'
-import { ITasks } from '@/services/IInterface'
+import { inprogressDataStoreModule } from '@/stores/inprogressDataStoreModule'
 
-const tasksDataStore = tasksDataStoreModule()
+const inprogressDataStore = inprogressDataStoreModule()
 
-export const AllTasks = async () => {
-    await axios.get(`${application_base_url}${application_path.GET.ALL_TASKS}`)
+export const AllInProgress = async () => {
+    await axios.get(`${application_base_url}${application_path.GET.ALL_IN_PROGRESS}`)
     .then((res) => {
-       tasksDataStore.tasks = res.data
+        inprogressDataStore.inProgress = res.data
     })
     .catch((error) => {
         ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
     })
 }
 
-export const CreateTask = async (task: ITasks) => {
-   await axios.post(`${application_base_url}${application_path.POST.CREATE_TASK}` , {
+export const AddToInProgress = async (task: any) => {
+   await axios.post(`${application_base_url}${application_path.POST.ADD_TO_IN_PROGRESS}` , {
         name : task.name , 
         description : task.description
     }) 
    .then(() => {
-        SuccessNotification(3000 , 'New task created' , 'bottom-center')
+        SuccessNotification(3000 , 'Task Add To In Progress Level...' , 'bottom-center')
     })
     .catch(() => {
         ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
@@ -34,14 +33,6 @@ export const DeleteTask = async (id: number) => {
     .then(() => {
          SuccessNotification(3000 , 'Task Deleted' , 'bottom-center')
      })
-     .catch(() => {
-         ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
-     })
- }
-
- export const RemoveTask = async (id: number) => {
-    await axios.delete(`${application_base_url}${application_path.DELETE.DELETE_TASK}/${id}`) 
-    .then(() => {})
      .catch(() => {
          ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
      })

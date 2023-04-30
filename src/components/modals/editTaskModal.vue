@@ -1,6 +1,12 @@
 <template>
   <div class="base-modal-container">
-    <i class="bi bi-pencil-square application_pointer" @click="changeStatusModal"></i>
+    <i
+      class="bi bi-pencil-square application_pointer"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Edit task"
+      @click="changeStatusModal"
+    ></i>
 
     <div class="base-modal" v-if="isOpen">
       <div
@@ -93,11 +99,11 @@ const createTask = async () => {
       CreateTask(newTask.value);
       newTask.value.name = "";
       newTask.value.description = "";
-      loading.value = false
-    } , 1500);
+      loading.value = false;
+    }, 1500);
     setTimeout(() => {
       AllTasks();
-      changeStatusModal()
+      changeStatusModal();
     }, 2000);
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="base-card"
+    class="base-card application_animation" 
   >
     <slot name="cardContent"></slot>
   </div>

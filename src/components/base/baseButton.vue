@@ -8,9 +8,10 @@
     }"
     :style="{'border-radius': borderRadius}"
   >
-    <div class="" v-if="loading">
-      <div class="spinner-border spinner-border-sm" role="status"></div>
-      <span class="px-1">Loading</span>
+    <div class="d-flex justify-content-center align-items-center" style="width:60px; height:20px;" v-if="loading">
+      <div class="step_one"></div>
+      <div class="step_two"></div>
+      <div class="step_three"></div>
     </div>
 
     <div v-else>
@@ -142,9 +143,11 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .button {
-  padding: 3px 10px;
+  padding: 5px 10px;
   border: none;
   border-radius: 5px;
+  font-size: 13px;
+  font-weight: 500;
 }
 .disbaled_button {
   background: rgba(0, 0, 0, 0.2);
@@ -152,5 +155,36 @@ const props = defineProps({
   -webkit-backdrop-filter: blur(0px);
   cursor: not-allowed;
   pointer-events: none;
+}
+
+.step_one{
+  position: static;
+  width: 3px;
+  height: 1px;
+  border-radius: 5px;
+  background: #fff;
+  animation: 0.9s animation_loading infinite;
+}
+.step_two{
+  position: static;
+  width: 3px;
+  height: 1px;
+  border-radius: 5px;
+  background: #fff;
+  margin: 0 2px;
+  animation: 0.8s animation_loading infinite;
+}
+.step_three{
+  position: static;
+  width: 3px;
+  height: 1px;
+  border-radius: 5px;
+  background: #fff;
+  animation: 0.6s animation_loading infinite;
+}
+
+@keyframes animation_loading {
+  0%{height: 1px;}
+  100%{height: 10px;}
 }
 </style>    
