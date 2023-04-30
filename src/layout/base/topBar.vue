@@ -7,17 +7,20 @@
     }"
   >
     <div class="profile-container px-4">
-      <img src="@/assets/images/profile-avatar.jpeg" alt="profile image">
+      <img src="@/assets/images/profile-avatar.jpeg" alt="profile image" />
       <div class="d-flex flex-column px-2">
         <span class="font_size_s font_w_800">jimmu@gmail.com</span>
         <span class="font_size_s font_w_100 pt-1">$ 200,000</span>
       </div>
     </div>
     <div class="logo-container px-4">
-     <span class="font_size_m font_w_800">TASK HOLDER</span>
-     <span class="font_size_s font_w_100 pt-1">Lorem ipsum dolor sit amet consectetur...</span>
+      <span class="font_size_m font_w_800">TASK HOLDER</span>
+      <span class="font_size_s font_w_100 pt-1"
+        >Lorem ipsum dolor sit amet consectetur...</span
+      >
     </div>
     <div class="items-container px-4">
+      <createTaskModal />
       <themeSwitcher />
     </div>
   </div>
@@ -27,6 +30,7 @@
 import { computed, ref } from "vue";
 import { applicationTheme } from "@/services/applicationTheme";
 import themeSwitcher from "@/components/themeSwitcher";
+import createTaskModal from "@/components/modals/createTaskModal";
 
 const theme = applicationTheme();
 
@@ -46,13 +50,13 @@ const watchTheme = computed(() => {
     display: flex;
     flex-direction: row;
     align-items: center;
-    img{
+    img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
     }
   }
-  .logo-container{
+  .logo-container {
     width: 30%;
     display: flex;
     flex-direction: column;

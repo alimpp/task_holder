@@ -32,3 +32,36 @@
     color: var(--light-);
     transition: 0.3s;
 }
+
+.card_container_dark_mode_theme{
+    background-color: var(--card-container-in-dark-mode);
+    color: var(--light-);
+    transition: 0.3s;
+}
+.card_container_light_mode_theme{
+    background-color: var(--white-);
+    color: var(--dark-);
+    transition: 0.3s;
+}
+
+.create_task_modal_dark_mode_theme{
+    background-color: var( --create-task-modal-in-dark-mode);
+    color: var(--light-);
+    transition: 0.3s;
+}
+
+.create_task_modal_light_mode_theme{
+    background-color: var(--white-);
+    color: var(--dark-);
+    transition: 0.3s;
+}
+
+.base_input_dark_mode_theme{
+    color: var(--light-);
+    transition: 0.3s;
+}
+
+.base_input_light_mode_theme{
+    color: var(--dark-);
+    transition: 0.3s;
+}

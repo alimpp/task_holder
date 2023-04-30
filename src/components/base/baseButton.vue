@@ -3,13 +3,7 @@
     class="button"
     :class="{
       primary_background: primaryBackground,
-      secondary_background: secondaryBackground,
-      success_background: successBackground,
       danger_background: dangerBackground,
-      warning_background: warningBackground,
-      info_background: infoBackground,
-      light_background: lightBackground,
-      dark_background: darkBackground,
       disbaled_button: disabledButton,
     }"
     :style="{'border-radius': borderRadius}"
@@ -148,7 +142,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .button {
-  padding: 5px;
+  padding: 3px 10px;
   border: none;
   border-radius: 5px;
 }
