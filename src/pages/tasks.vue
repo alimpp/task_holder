@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row application_animation">
     <div
       class="col-lg-4 card-container mt-3"
       :class="{

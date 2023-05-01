@@ -41,6 +41,11 @@ const isOpen = ref(false);
 
 const items = ref([
   {
+    name: "Dashboard",
+    route: "/dashboard",
+    icon: "bi-clipboard-data",
+  },
+  {
     name: "Tasks",
     route: "/tasks",
     icon: "bi-journal-check",
@@ -82,15 +87,15 @@ const changeStatusSidebar = () => {
   .items{
     height: 400px;
   }
+  // .router-link-active {
+  //   background: #fff;
+  //   color: rgb(102, 111, 241);
+  //   border-radius: 10px;
+  //   padding: 0px 20px;
+  //   margin: 0px 5px;
+  // }
 }
 .isOpen {
   width: 170px;
-}
-.router-link-active {
-  background: #fff;
-  color: rgb(102, 111, 241);
-  border-radius: 10px;
-  padding: 0px 20px;
-  margin: 0px 5px;
 }
 </style>

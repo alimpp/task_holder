@@ -8,6 +8,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/layout/base/index.vue"),
     children: [
       {
+        path:"/dashboard",
+        name: "dashboard page",
+        component: () => import("@/pages/dashboard.vue"),
+      },
+      {
         path:"/tasks",
         name: "tasks page",
         component: () => import("@/pages/tasks.vue"),

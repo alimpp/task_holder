@@ -20,7 +20,11 @@
       >
     </div>
     <div class="items-container px-4">
-      <createTaskModal />
+      <createTaskModal
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Create New Task"
+      />
       <themeSwitcher />
     </div>
   </div>
