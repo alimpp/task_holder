@@ -90,7 +90,7 @@ const changeStatusSidebar = () => {
   background: #fff;
   color: rgb(102, 111, 241);
   border-radius: 10px;
-  padding: 0px 3px;
+  padding: 0px 20px;
   margin: 0px 5px;
 }
 </style>

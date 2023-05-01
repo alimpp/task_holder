@@ -11,7 +11,7 @@ export const AllInProgress = async () => {
         inprogressDataStore.inProgress = res.data
     })
     .catch((error) => {
-        ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
+        ErrorNotification(5000,'Conection has error and low service please try again...!','top-right')
     })
 }
 
@@ -21,19 +21,27 @@ export const AddToInProgress = async (task: any) => {
         description : task.description
     }) 
    .then(() => {
-        SuccessNotification(3000 , 'Task Add To In Progress Level...' , 'bottom-center')
+        SuccessNotification(3000 , 'Task Add To In Progress Level...' , 'top-right')
     })
     .catch(() => {
-        ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
+        ErrorNotification(5000,'Conection has error and low service please try again...!','btop-right')
     })
 }
 
-export const DeleteTask = async (id: number) => {
-    await axios.delete(`${application_base_url}${application_path.DELETE.DELETE_TASK}/${id}`) 
+export const DeleteInProgress = async (id: number) => {
+    await axios.delete(`${application_base_url}${application_path.DELETE.DELETE_IN_PROGRESS}/${id}`) 
     .then(() => {
-         SuccessNotification(3000 , 'Task Deleted' , 'bottom-center')
+         SuccessNotification(3000 , 'One Item Deleted From In Progress Level' , 'top-right')
      })
      .catch(() => {
-         ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
+         ErrorNotification(5000,'Conection has error and low service please try again...!','top-right')
+     })
+ }
+
+ export const RemoveInProgress = async (id: number) => {
+    await axios.delete(`${application_base_url}${application_path.DELETE.DELETE_IN_PROGRESS}/${id}`) 
+    .then(() => {})
+     .catch(() => {
+         ErrorNotification(5000,'Conection has error and low service please try again...!','top-right')
      })
  }

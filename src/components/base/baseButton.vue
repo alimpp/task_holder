@@ -147,7 +147,7 @@ const props = defineProps({
   border: none;
   border-radius: 5px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 900;
 }
 .disbaled_button {
   background: rgba(0, 0, 0, 0.2);
@@ -163,6 +163,7 @@ const props = defineProps({
   height: 1px;
   border-radius: 5px;
   background: #fff;
+  margin: 0 2px; 
   animation: 0.9s animation_loading infinite;
 }
 .step_two{
@@ -171,7 +172,6 @@ const props = defineProps({
   height: 1px;
   border-radius: 5px;
   background: #fff;
-  margin: 0 2px;
   animation: 0.8s animation_loading infinite;
 }
 .step_three{
@@ -180,11 +180,12 @@ const props = defineProps({
   height: 1px;
   border-radius: 5px;
   background: #fff;
+  margin: 0 2px; 
   animation: 0.6s animation_loading infinite;
 }
 
 @keyframes animation_loading {
   0%{height: 1px;}
-  100%{height: 10px;}
+  100%{height: 18px;}
 }
 </style>    

@@ -7,7 +7,7 @@
             <span class="font_size_s font_w_800">{{ name }}</span>
           </div>
           <div class="w-50 d-flex justify-content-end">
-            <editTaskModal />
+            <editTaskModal :id="id" :name="name" :description="description" />
 
             <div
               class="spinner-border spinner-border-sm mx-3"
@@ -102,4 +102,3 @@ const props = defineProps({
 });
 </script>
 
-<style></style>

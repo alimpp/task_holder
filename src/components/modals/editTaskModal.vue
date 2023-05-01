@@ -44,9 +44,9 @@
 
           <div class="mt-3 d-flex justify-content-end">
             <baseButton
-              name="Create Task"
+              name="Edit Task"
               color="primary"
-              @click="createTask"
+              @click="editTask"
               :loading="loading"
             />
           </div>
@@ -62,7 +62,7 @@ import { applicationTheme } from "@/services/applicationTheme";
 import useVuelidate from "@vuelidate/core";
 import baseInput from "@/components/base/baseInput";
 import baseButton from "@/components/base/baseButton";
-import { CreateTask, AllTasks } from "@/api/tasksApiModule";
+import { EditTask, AllTasks } from "@/api/tasksApiModule";
 
 import { required, minLength } from "@vuelidate/validators";
 
@@ -71,8 +71,8 @@ const isOpen = ref(false);
 const loading = ref(false);
 
 const newTask = ref({
-  name: "",
-  descritpion: "",
+  name: props.name,
+  description: props.description,
 });
 
 const rules = computed(() => {
@@ -91,14 +91,12 @@ const watchTheme = computed(() => {
   return theme.themeStatus;
 });
 
-const createTask = async () => {
+const editTask = async () => {
   const result = await v$.value.$validate();
   if (result) {
     loading.value = true;
     setTimeout(() => {
-      CreateTask(newTask.value);
-      newTask.value.name = "";
-      newTask.value.description = "";
+      EditTask(newTask.value , props.id);
       loading.value = false;
     }, 1500);
     setTimeout(() => {
@@ -115,6 +113,23 @@ function changeStatusModal() {
     isOpen.value = false;
   }
 }
+
+const props = defineProps({
+  name: {
+    type: String,
+    default: "",
+    required: false,
+  },
+  description: {
+    type: String,
+    default: "",
+    required: true,
+  },
+  id: {
+    type: Number,
+    required: true,
+  },
+});
 </script>
 
 <style lang="scss" scoped>

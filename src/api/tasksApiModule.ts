@@ -12,7 +12,7 @@ export const AllTasks = async () => {
        tasksDataStore.tasks = res.data
     })
     .catch((error) => {
-        ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
+        ErrorNotification(5000,'Conection has error and low service please try again...!','top-right')
     })
 }
 
@@ -22,20 +22,20 @@ export const CreateTask = async (task: ITasks) => {
         description : task.description
     }) 
    .then(() => {
-        SuccessNotification(3000 , 'New task created' , 'bottom-center')
+        SuccessNotification(3000 , 'New Task Created' , 'top-right')
     })
     .catch(() => {
-        ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
+        ErrorNotification(5000,'Conection has error and low service please try again...!','top-right')
     })
 }
 
 export const DeleteTask = async (id: number) => {
     await axios.delete(`${application_base_url}${application_path.DELETE.DELETE_TASK}/${id}`) 
     .then(() => {
-         SuccessNotification(3000 , 'Task Deleted' , 'bottom-center')
+         SuccessNotification(3000 , 'Task Deleted' , 'top-right')
      })
      .catch(() => {
-         ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
+         ErrorNotification(5000,'Conection has error and low service please try again...!','top-right')
      })
  }
 
@@ -43,6 +43,21 @@ export const DeleteTask = async (id: number) => {
     await axios.delete(`${application_base_url}${application_path.DELETE.DELETE_TASK}/${id}`) 
     .then(() => {})
      .catch(() => {
-         ErrorNotification(5000,'Conection has error and low service please try again...!','bottom-center')
+         ErrorNotification(5000,'Conection has error and low service please try again...!','top-right')
      })
  }
+
+ export const EditTask = async (task: ITasks , id: number) => {
+    await axios.put(`${application_base_url}${application_path.PUT.EDIT_TASKS}/${id}` , {
+         id : id ,
+         name : task.name , 
+         description : task.description
+     }) 
+    .then(() => {
+         SuccessNotification(3000 , 'Task Edited' , 'top-right')
+     })
+     .catch(() => {
+         ErrorNotification(5000,'Conection has error and low service please try again...!','top-right')
+     })
+ }
+ 
