@@ -41,11 +41,6 @@ const isOpen = ref(false);
 
 const items = ref([
   {
-    name: "Dashboard",
-    route: "/dashboard",
-    icon: "bi-clipboard-data",
-  },
-  {
     name: "Tasks",
     route: "/tasks",
     icon: "bi-journal-check",
@@ -54,6 +49,11 @@ const items = ref([
     name: "Assets",
     route: "/assets",
     icon: "bi-coin",
+  },
+  {
+    name: "Dashboard",
+    route: "/dashboard",
+    icon: "bi-clipboard-data",
   },
   {
     name: "Profile",

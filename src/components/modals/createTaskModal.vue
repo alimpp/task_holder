@@ -52,6 +52,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import {useRouter} from 'vue-router'
 import { applicationTheme } from "@/services/applicationTheme";
 import useVuelidate from "@vuelidate/core";
 import baseInput from "@/components/base/baseInput";
@@ -63,6 +64,7 @@ import { required, minLength } from "@vuelidate/validators";
 const theme = applicationTheme();
 const isOpen = ref(false);
 const loading = ref(false);
+const router = useRouter()
 
 const newTask = ref({
   name: "",
@@ -98,6 +100,7 @@ const createTask = async () => {
     setTimeout(() => {
       AllTasks();
       changeStatusModal()
+      router.push('/tasks')
     }, 2000);
   }
 };
