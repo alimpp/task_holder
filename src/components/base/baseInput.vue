@@ -7,7 +7,8 @@
         'bi-eye-slash': password,
         'bi-envelope-at': email,
         'bi-file-earmark-ruled': taskName,
-        'bi-chat-left-text': description
+        'bi-chat-left-text': description,
+        'bi-coin' : coin
       }"
     ></i>
     <input
@@ -25,6 +26,7 @@
       :style="{ 'border-radius': borderRadius }"
       @input="$emit('update:modelValue', $event.target.value)"
     />
+    <p class="pt-1 font_size_s font_w_100 danger_color" v-if="hasError">{{ textError }}</p>
   </div>
 </template>
 
@@ -63,6 +65,12 @@ const email = computed(() => {
   }
 });
 
+const coin = computed(() => {
+  if (props.icon === "coin") {
+    return true;
+  }
+});
+
 const description = computed(() => {
   if(props.icon === "description") {
     return true 
@@ -90,6 +98,11 @@ const props = defineProps({
     type: Boolean,
     default: false,
     required: true,
+  },
+  textError: {
+    type: String,
+    default: '',
+    required: false,
   },
   modelValue: {
     type: String,

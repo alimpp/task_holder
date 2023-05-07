@@ -2,39 +2,24 @@
   "profile": [],
   "tasks": [
     {
-      "name": "32132132",
-      "description": "321321321321321",
-      "id": 1
+      "name": "432432432432",
+      "description": "432432432432432",
+      "id": 4
     },
     {
-      "name": "2321321321321",
-      "description": "321321321321321",
-      "id": 2
+      "name": "sasasasa",
+      "description": "sasasasaasaassaasas",
+      "id": 5
     }
   ],
   "inprogress": [
     {
-      "name": "sasasaasassa",
-      "description": "sasasasasasasa",
-      "id": 8
-    },
-    {
-      "name": "787887788",
-      "description": "88787878888778",
-      "id": 10
-    },
-    {
-      "name": "8878787788787878787",
-      "description": "87787878788887",
-      "id": 12
+      "name": "qwqwqwqwqww",
+      "description": "wqqwqwqwwqqsasa",
+      "id": 1
     }
   ],
   "completed": [
-    {
-      "name": "sasasasasa",
-      "description": "sasasasasasasasasa",
-      "id": 2
-    },
     {
       "name": "rewqwreqerqwerqwer",
       "description": "rewewrwerqewrerw",
@@ -44,9 +29,34 @@
       "name": "ewrerwwerewrew",
       "description": "ewrewrewrewrerwewrewr",
       "id": 4
+    },
+    {
+      "name": "8878787788787878787",
+      "description": "87787878788887",
+      "id": 5
+    },
+    {
+      "name": "sasasaasassa",
+      "description": "sasasasasasasa",
+      "id": 6
+    },
+    {
+      "name": "saassaas",
+      "description": "321321321321321",
+      "id": 7
+    },
+    {
+      "name": "32132132",
+      "description": "321321321321321",
+      "id": 8
     }
   ],
-  "total-assets": [] , 
-  "decrement-assets" : [] , 
-  "decrement-list" : []
+  "totalassets": {
+    "assets": 2130
+  },
+  "decrementassets": {
+    "id": 0,
+    "decrementAssets": 0
+  },
+  "decrement-list": []
 }
