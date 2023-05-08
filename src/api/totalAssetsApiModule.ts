@@ -15,12 +15,12 @@ export const TotalAssets = async () => {
     })
 }
 
-export const AddAssets = async (money: any) => {
+export const UpdateAssets = async (money: any) => {
    await axios.put(`${application_base_url}${application_path.POST.ADD_ASSETS}` , {
      assets : money
    }) 
    .then(() => {
-        SuccessNotification(3000 , `${money} Has Been Added To Your Assets ` , 'top-right')
+        SuccessNotification(3000 , 'Total Assets Updated' , 'top-right')
     })
     .catch(() => {
         ErrorNotification(5000,'Conection has error and low service please try again...!','btop-right')

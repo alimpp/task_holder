@@ -92,12 +92,12 @@ const props = defineProps({
   placeholder: {
     type: String,
     default: "",
-    required: true,
+    required: false,
   },
   hasError: {
     type: Boolean,
     default: false,
-    required: true,
+    required: false,
   },
   textError: {
     type: String,
@@ -121,7 +121,7 @@ const props = defineProps({
   disable: {
     type: Boolean,
     default: false,
-    required: true,
+    required: false,
   },
 });
 </script>

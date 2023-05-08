@@ -3,26 +3,11 @@
     <template #cardContent>
       <div d-flex flex-column>
         <div class="d-flex">
-          <div class="w-50 d-flex justify-content-start">
-            <span class="font_size_s font_w_800">bye book shop</span>
-          </div>
-          <div class="w-50 d-flex justify-content-end">
-            <div
-              class="spinner-border spinner-border-sm"
-              role="status"
-              v-if="deleteLoading"
-            ></div>
-            <i
-              class="bi bi-x-lg application_pointer"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              title="Remove task"
-              @click="deleteCompleted"
-              v-else
-            ></i>
+          <div class="w-100 d-flex justify-content-start">
+            <span class="font_size_s font_w_800">{{ title }}</span>
           </div>
         </div>
-        <p class="font_size_s font_w_100 gray_color pt-2">120000 $</p>
+        <p class="font_size_s font_w_100 gray_color pt-2">{{ price }} $</p>
       </div>
     </template>
   </baseCard>
@@ -54,11 +39,11 @@ const props = defineProps({
   price: {
     type: String,
     default: "",
-    required: true,
+    required: false,
   },
   id: {
     type: Number,
-    required: true,
+    required: false,
   },
 });
 </script>

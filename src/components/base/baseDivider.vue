@@ -11,12 +11,12 @@
     text: {
       type: String,
       default: "",
-      required: true,
+      required: false,
     },
     width: {
       type: String,
       default: "",
-      required: true,
+      required: false,
     },
   });
   </script>

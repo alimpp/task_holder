@@ -17,6 +17,9 @@
         Nemo aut iste commodi quae facere voluptates impedit minus, sit earum obcaecati,
         id, officiis veritatis natus suscipit dolor eum. Obcaecati!
       </p>
+      <div class="mt-5">
+        <AssetsDoughnutChart />
+      </div>
     </div>
     <div
       class="col-lg-5 mx-5 mt-4 px-4 pt-3"
@@ -36,14 +39,15 @@
         id, officiis veritatis natus suscipit dolor eum. Obcaecati!
       </p>
       <div class="mt-5">
-        <DoughnutChart />
+        <TasksDoughnutChart />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import DoughnutChart from "@/components/charts/tasksChart/DoughnutChart";
+import TasksDoughnutChart from "@/components/charts/tasksChart/TasksDoughnutChart";
+import AssetsDoughnutChart from '@/components/charts/assetsChart/AssetsDoughnutChart'
 import { AllTasks } from "@/api/tasksApiModule";
 import { AllInProgress } from "@/api/inprogressApiModule";
 import { AllCompleted } from "@/api/completedApiModule";

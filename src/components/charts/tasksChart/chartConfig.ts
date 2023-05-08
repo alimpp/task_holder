@@ -23,7 +23,7 @@ export const data = {
     labels: ['All Tasks' , 'In Progress Tasks' , 'Completed Tasks'],
     datasets: [
       {
-        backgroundColor: ['#E5BEEC','#917FB3','#2A2F4F'],
+        backgroundColor: ['#E5BEEC','#917FB3','#FCFFB2'],
         data: [tasksDataChart , inProgressDataChart , completedDataChart ] , 
         borderColor: ['#E5BEEC'],
       }

@@ -93,11 +93,11 @@ const props = defineProps({
   description: {
     type: String,
     default: "",
-    required: true,
+    required: false,
   },
   id: {
     type: Number,
-    required: true,
+    required: false,
   },
 });
 </script>

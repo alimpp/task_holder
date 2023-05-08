@@ -1,6 +1,6 @@
 <template>
   <div class="base-modal-container">
-    <i class="bi bi-cash-coin application_pointer" @click="changeStatusModal"></i>
+    <i class="bi bi-window-plus application_pointer" @click="changeStatusModal"></i>
 
     <div class="base-modal" v-if="isOpen">
       <div
@@ -19,17 +19,25 @@
           <span class="font_size_s font_w_100">Enter Price</span>
           <baseInput
             icon="coin"
-            v-model="money"
+            v-model="data.money"
             type="number"
-            :hasError="error"
+            :hasError="error.money"
+            textError="Price is required...!"
+          />
+          <span class="font_size_s font_w_100 pt-2">Enter Title</span>
+          <baseInput
+            icon="taskName"
+            v-model="data.title"
+            type="text"
+            :hasError="error.title"
             textError="Price is required...!"
           />
 
           <div class="mt-3 d-flex justify-content-end">
             <baseButton
-              name="Add To Assets"
+              name="Add To Decrement Lists"
               color="primary"
-              @click="addAsets"
+              @click="addToDecrementLists"
               :loading="loading"
             />
           </div>
@@ -45,49 +53,68 @@ import { applicationTheme } from "@/services/applicationTheme";
 import baseInput from "@/components/base/baseInput";
 import baseButton from "@/components/base/baseButton";
 import { TotalAssets, UpdateAssets } from "@/api/totalAssetsApiModule";
+import {
+  AddToDecrement,
+  DecrementAssets,
+  DecrementLists,
+  AddToDecrementList,
+} from "@/api/decrementAssetsApiModule";
 import { totalAssetsDataStoreModule } from "@/stores/totalAssetsDataStoreModule";
 
 const theme = applicationTheme();
 const isOpen = ref(false);
 const loading = ref(false);
-const error = ref(false);
 
-const money = ref(null);
+const error = ref({
+  money: false,
+  title: false,
+});
+
+const data = ref({
+  money: null,
+  title: "",
+});
 const totalAssetsDataStore = totalAssetsDataStoreModule();
 
 const watchTheme = computed(() => {
   return theme.themeStatus;
 });
 
-const addAsets = async () => {
+const addToDecrementLists = async () => {
   let result = true;
-  if (money.value === 0) {
-    result = false;
-    error.value = true;
-  } else {
-    result = true;
-    error.value = false;
+  if(data.value.money === null){
+    result = false 
+    error.value.money = true
+  }else{
+    result = true 
+    error.value.money = false
   }
-  if (money.value === null) {
-    result = false;
-    error.value = true;
-  } else {
-    result = true;
-    error.value = false;
+  if(data.value.title === ''){
+    result = false 
+    error.value.title = true
+  }else{
+    result = true 
+    error.value.title = false
   }
-  if (result) {
-    loading.value = true;
-    const changeToNumber = parseInt(money.value);
-    const data = totalAssetsDataStore.totalAssets.assets + changeToNumber;
+  if(result){
+    loading.value = true 
+    const changeToNumber = parseInt(data.value.money);
+    const decrementFromTotalAssets = totalAssetsDataStore.totalAssets.assets - changeToNumber
+    const incrementToTotalDecrementAssets = totalAssetsDataStore.decrementAssets.decrementAssets + changeToNumber
+    UpdateAssets(decrementFromTotalAssets)
+    AddToDecrement(incrementToTotalDecrementAssets)
     setTimeout(() => {
-      UpdateAssets(data);
-      money.value = null
-      loading.value = false;
-    }, 1500);
+      AddToDecrementList(data.value)
+      data.value.money = null 
+      data.value.title = ''
+      loading.value = false 
+    } , 1500)
     setTimeout(() => {
-      TotalAssets();
-      changeStatusModal();
-    }, 2000);
+      TotalAssets()
+      DecrementAssets()
+      DecrementLists()
+      changeStatusModal()
+    } , 2000)
   }
 };
 

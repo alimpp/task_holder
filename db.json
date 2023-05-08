@@ -2,44 +2,24 @@
   "profile": [],
   "tasks": [
     {
-      "name": "432432432432",
-      "description": "432432432432432",
-      "id": 4
+      "name": "hello world",
+      "description": "dsadsadsadsadsa",
+      "id": 6
     },
     {
-      "name": "sasasasa",
-      "description": "sasasasaasaassaasas",
-      "id": 5
+      "name": "aaaaaaaa",
+      "description": "sasaassasasasasasasaas",
+      "id": 7
     }
   ],
   "inprogress": [
     {
-      "name": "qwqwqwqwqww",
-      "description": "wqqwqwqwwqqsasa",
-      "id": 1
+      "name": "432432432432",
+      "description": "432432432432432",
+      "id": 2
     }
   ],
   "completed": [
-    {
-      "name": "rewqwreqerqwerqwer",
-      "description": "rewewrwerqewrerw",
-      "id": 3
-    },
-    {
-      "name": "ewrerwwerewrew",
-      "description": "ewrewrewrewrerwewrewr",
-      "id": 4
-    },
-    {
-      "name": "8878787788787878787",
-      "description": "87787878788887",
-      "id": 5
-    },
-    {
-      "name": "sasasaasassa",
-      "description": "sasasasasasasa",
-      "id": 6
-    },
     {
       "name": "saassaas",
       "description": "321321321321321",
@@ -49,14 +29,64 @@
       "name": "32132132",
       "description": "321321321321321",
       "id": 8
+    },
+    {
+      "name": "qwqwqwqwqww",
+      "description": "wqqwqwqwwqqsasa",
+      "id": 9
+    },
+    {
+      "name": "sasasasa",
+      "description": "sasasasaasaassaasas",
+      "id": 10
     }
   ],
   "totalassets": {
-    "assets": 2130
+    "assets": 5878
   },
   "decrementassets": {
-    "id": 0,
-    "decrementAssets": 0
+    "decrementAssets": 10372
   },
-  "decrement-list": []
+  "decrement-list": [
+    {
+      "price": "10",
+      "title": "new book",
+      "id": 1
+    },
+    {
+      "price": "20",
+      "title": "bye mr bin videos",
+      "id": 2
+    },
+    {
+      "price": "100",
+      "title": "food",
+      "id": 3
+    },
+    {
+      "price": "120",
+      "title": "bye milk and tea",
+      "id": 4
+    },
+    {
+      "price": "100",
+      "title": "tea",
+      "id": 5
+    },
+    {
+      "price": "11",
+      "title": "food",
+      "id": 6
+    },
+    {
+      "price": "11",
+      "title": "pizza",
+      "id": 7
+    },
+    {
+      "price": "10000",
+      "title": "bye new home for bus",
+      "id": 8
+    }
+  ]
 }

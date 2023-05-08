@@ -32,10 +32,6 @@
 <script setup>
 import { computed, ref, onMounted } from "vue";
 
-onMounted(() => {
-    console.log(props.bordrRadius);
-})
-
 // Props for background button
 const primaryBackground = computed(() => {
   if (props.color === "primary") {
@@ -110,12 +106,12 @@ const props = defineProps({
   color: {
     type: String,
     default: "",
-    required: true,
+    required: false,
   },
   name: {
     type: String,
     default: "",
-    required: true,
+    required: false,
   },
   loading: {
     type: Boolean,
