@@ -55,11 +55,6 @@ const items = ref([
     route: "/dashboard",
     icon: "bi-clipboard-data",
   },
-  {
-    name: "Profile",
-    route: "/profile",
-    icon: "bi-person-circle",
-  },
 ]);
 
 const watchTheme = computed(() => {

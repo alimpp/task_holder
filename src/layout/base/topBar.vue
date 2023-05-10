@@ -9,8 +9,8 @@
     <div class="profile-container px-4">
       <img src="@/assets/images/profile-avatar.jpeg" alt="profile image" />
       <div class="d-flex flex-column px-2">
-        <span class="font_size_s font_w_800">jimmu@gmail.com</span>
-        <span class="font_size_s font_w_100 pt-1">$ 200,000</span>
+        <span class="font_size_s font_w_800">jhondoe2023@gmail.com</span>
+        <span class="font_size_s font_w_100 pt-1">$ {{ totalAssets.assets }}</span>
       </div>
     </div>
     <div class="logo-container px-4">
@@ -35,12 +35,18 @@ import { computed, ref } from "vue";
 import { applicationTheme } from "@/services/applicationTheme";
 import themeSwitcher from "@/components/themeSwitcher";
 import createTaskModal from "@/components/modals/createTaskModal";
+import {totalAssetsDataStoreModule} from '@/stores/totalAssetsDataStoreModule'
 
 const theme = applicationTheme();
+const totalAssetsDataStore = totalAssetsDataStoreModule()
 
 const watchTheme = computed(() => {
   return theme.themeStatus;
 });
+
+const totalAssets = computed(() => {
+  return totalAssetsDataStore.totalAssets
+})
 </script>
 
 <style lang="scss" scoped>

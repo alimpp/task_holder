@@ -1,22 +1,21 @@
 {
   "profile": [],
-  "tasks": [
-    {
-      "name": "hello world",
-      "description": "dsadsadsadsadsa",
-      "id": 6
-    },
-    {
-      "name": "aaaaaaaa",
-      "description": "sasaassasasasasasasaas",
-      "id": 7
-    }
-  ],
+  "tasks": [],
   "inprogress": [
     {
       "name": "432432432432",
       "description": "432432432432432",
       "id": 2
+    },
+    {
+      "name": "aaaaaaaa",
+      "description": "sasaassasasasasasasaas",
+      "id": 3
+    },
+    {
+      "name": "hello world 20202022",
+      "description": "dsadsadsadsadsa",
+      "id": 4
     }
   ],
   "completed": [
@@ -42,10 +41,10 @@
     }
   ],
   "totalassets": {
-    "assets": 5878
+    "assets": 99988000901
   },
   "decrementassets": {
-    "decrementAssets": 10372
+    "decrementAssets": 10012017372
   },
   "decrement-list": [
     {
@@ -87,6 +86,21 @@
       "price": "10000",
       "title": "bye new home for bus",
       "id": 8
+    },
+    {
+      "price": "7000",
+      "title": "for js videos",
+      "id": 9
+    },
+    {
+      "price": "12000000",
+      "title": "for  home",
+      "id": 10
+    },
+    {
+      "price": "10000000000",
+      "title": "for test",
+      "id": 11
     }
   ]
 }
